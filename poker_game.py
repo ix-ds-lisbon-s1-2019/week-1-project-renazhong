@@ -11,9 +11,8 @@ import random
 
 def poker(number_of_players):
     
-    ranks = [2,3,4,5,6,7,8,9,10,'J', 'Q', 'K', 'A']
+    ranks = ['2','3','4','5','6','7','8','9','10','J', 'Q', 'K', 'A']
     suits = ['clubs', 'spades', 'hearts', 'diamonds']
-    
     pdict = {}
     drawn = []
     
@@ -21,7 +20,6 @@ def poker(number_of_players):
         name = input("What's your name? ")
         pcards = []
         prank = []
-        
         track = 0; 
         while track < 5:
             rank = random.choice(ranks)
@@ -34,16 +32,60 @@ def poker(number_of_players):
                 track += 1
             else:
                 continue
-
-        #pdict[name] = pcards
         pdict[name] = prank
         
-    return pdict #returns hands of all the players in the game
+        print (pdict)
 
     # easy version
+    windict = {}
+    valdict = {
+            "1":1,
+            "2":2,
+            "3":3,
+            "4":4,
+            "5":5,
+            "6":6,
+            "7":7,
+            "8":8,
+            "9":9,
+            "10":10,
+            "J":11,
+            "Q":12,
+            "K":13,
+            "A":14            
+            }
     
+    for n in pdict.keys(): #every player 
+        max = 0
+        for v in pdict[n]: #hands
+            if valdict[v] >= max:
+                max = valdict[v]
+        windict[n] = max 
+        
+    winner = ""
+    most = 0
+    for k in windict.keys():
+        if windict[k] > most:
+            most = windict[k]
+            winner = k
+        elif  windict[k] == most:
+            
+    return winner
     
-    
-    
-print(poker(5))
+print(poker(2))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
