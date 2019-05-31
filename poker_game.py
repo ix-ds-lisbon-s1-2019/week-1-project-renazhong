@@ -33,13 +33,11 @@ def poker(number_of_players):
             else:
                 continue
         pdict[name] = prank
-        
-        print (pdict)
 
     # easy version
+    newdict = {}
     windict = {}
-    valdict = {
-            "1":1,
+    conv = {"1":1,
             "2":2,
             "3":3,
             "4":4,
@@ -52,33 +50,50 @@ def poker(number_of_players):
             "J":11,
             "Q":12,
             "K":13,
-            "A":14            
-            }
+            "A":14}
     
     for n in pdict.keys(): #every player 
-        max = 0
+        intvals = []
         for v in pdict[n]: #hands
-            if valdict[v] >= max:
-                max = valdict[v]
-        windict[n] = max 
-        
+            intvals.append(conv[v])
+        intvals.sort(reverse = True)
+        newdict[n] = intvals
+    print("everyone's hands: ", newdict)
+    
     winner = ""
-    most = 0
-    for k in windict.keys():
-        if windict[k] > most:
-            most = windict[k]
+    largest = 0;
+    for k in newdict.keys():
+        mn = newdict[k][0]
+        if mn > largest: 
+            largest = mn
             winner = k
-        elif  windict[k] == most:
-            
-    return winner
+        elif mn < largest: 
+            pass
+        else:
+            larger = 0;
+            for l in newdict.keys():
+                mn = newdict[l][1]
+        
+    return winner 
     
 print(poker(2))
 
+#%%
+    temp = {}
+    for key,val in newdict.items():
+        temp[key]=val[0]
+    
+    max = 0
+    win = ""
+    for k,v in temp.items():
+        if v > max:
+            max = v
+            win = temp.get(v)
+        elif v == max:
+            for k,v in newdict.items():
+                temp[key].append(v[1])
 
-
-
-
-
+        
 
 
 
