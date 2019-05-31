@@ -7,16 +7,23 @@ Created on Thu May 30 11:23:25 2019
 """
 
 #%%
+import sys
 import random
 
-def poker(number_of_players):
+first_input = int(sys.argv[1]) #here we use int() to convert the string input into an integer
+
+# now we can use first_input
+print(first_input)
+
+
+def poker(first_input):
     
     ranks = ['2','3','4','5','6','7','8','9','10','J', 'Q', 'K', 'A']
     suits = ['clubs', 'spades', 'hearts', 'diamonds']
     pdict = {}
     drawn = []
     
-    for n in range(number_of_players):
+    for n in range(first_input):
         name = input("What's your name? ")
         pcards = []
         prank = []
@@ -74,26 +81,9 @@ def poker(number_of_players):
             for l in newdict.keys():
                 mn = newdict[l][1]
         
-    return winner 
-    
-print(poker(2))
+    return winner
 
-#%%
-    temp = {}
-    for key,val in newdict.items():
-        temp[key]=val[0]
-    
-    max = 0
-    win = ""
-    for k,v in temp.items():
-        if v > max:
-            max = v
-            win = temp.get(v)
-        elif v == max:
-            for k,v in newdict.items():
-                temp[key].append(v[1])
-
-        
+print(poker(first_input))
 
 
 
