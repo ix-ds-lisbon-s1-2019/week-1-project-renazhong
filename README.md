@@ -7,3 +7,16 @@ The deadline is **tomorrow (Friday) the 31st of May at 8pm**.
 
 EDIT: 
 [This is my blog!] (https://renazhong.github.io/)
+
+------------------------------------------------------------------------------------------------
+# Feedback: 
+------------------------------------------------------------------------------------------------
+
+| Section | Mark | 
+|---|---| 
+| Blog | 100% | 
+| Poker Game | 100% |
+||| 
+| Total/100% | 100% | 
+
+Blog is live and has everything required, poker game executes and works! Nice work Rena :)
